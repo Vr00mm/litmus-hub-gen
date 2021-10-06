@@ -76,7 +76,7 @@
          
      - name: container-kill-zookeeper-level-1
        template: container-kill
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: nginx
@@ -85,7 +85,7 @@
 
      - name: disk-fill-zookeeper-level-1
        template: disk-fill
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: zookeeper
@@ -93,42 +93,42 @@
 
      - name: pod-memory-hog-zookeeper-level-1
        template: pod-memory-hog-exec
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: zookeeper
 
      - name: pod-cpu-hog-zookeeper-level-1
        template: pod-cpu-hog-exec
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: zookeeper
 
      - name: pod-io-stress-zookeeper-level-1
        template: pod-io-stress
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: zookeeper
 
      - name: pod-network-loss-zookeeper-level-1
        template: pod-network-loss
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: zookeeper
 
      - name: pod-network-latency-zookeeper-level-1
        template: pod-network-latency
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: zookeeper
          
 -  name: my-hub-demo-second
    description: |
-	This is still a test of generation
+     This is still a test of generation
    platform: preproduction
    namespace: random-namespace
    workflows:
@@ -203,7 +203,7 @@
          
      - name: container-kill-zookeeper-level-1
        template: container-kill
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: nginx
@@ -212,7 +212,7 @@
 
      - name: disk-fill-zookeeper-level-1
        template: disk-fill
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: zookeeper
@@ -220,35 +220,35 @@
 
      - name: pod-memory-hog-zookeeper-level-1
        template: pod-memory-hog-exec
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: zookeeper
 
      - name: pod-cpu-hog-zookeeper-level-1
        template: pod-cpu-hog-exec
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: zookeeper
 
      - name: pod-io-stress-zookeeper-level-1
        template: pod-io-stress
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: zookeeper
 
      - name: pod-network-loss-zookeeper-level-1
        template: pod-network-loss
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: nginx
 
      - name: pod-network-latency-zookeeper-level-1
        template: pod-network-latency
-       label: 'composant=dd021-zk'
+       label: 'app=my-application'
        kind: statefulset
        args:
          TARGET_CONTAINER: zookeeper

@@ -1,3 +1,4 @@
+y
 apiVersion: litmuchaos.io/v1alpha1
 kind: ChartServiceVersion
 metadata:
@@ -25,10 +26,10 @@ spec:
   chaosType: infra
   maintainers:
     - name: ChaosTeam
-      email: _chaos@company.com
+      email: _chaos@pole-emploi.fr
   minKubeVersion: 1.12.0
   provider:
-    name: Company Name
+    name: Pole Emploi
   labels:
     app.kubernetes.io/component: chartserviceversion
     app.kubernetes.io/version: latest

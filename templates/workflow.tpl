@@ -5,6 +5,10 @@ metadata:
   name: {{.Workflow.Name}}
   namespace: default
 spec:
+  arguments:
+    parameters:
+      - name: adminModeNamespace
+        value: oi137-litmus
   entrypoint: custom-chaos
   securityContext:
     runAsNonRoot: true
@@ -15,18 +19,18 @@ spec:
       steps:
         - - name: install-chaos-experiments
             template: install-chaos-experiments
-{{- range $experimentName := .Workflow.Experiments -}}
+{{- range $experimentName := .Workflow.Experiments }}
         - - name: {{$experimentName}}
             template: {{$experimentName}}
 {{- end }}
     - name: install-chaos-experiments
       inputs:
         artifacts:
-{{- range $experimentName := .Workflow.Experiments -}}
+{{- range $experimentName := .Workflow.Experiments }}
           - name: {{$experimentName}}
             path: /tmp/{{$experimentName}}.yaml
             raw:
-              data: >
+              data: |
 {{- GetTemplate $data $experimentName | nindent 16 -}}{{- end -}}
       container:
         args:
