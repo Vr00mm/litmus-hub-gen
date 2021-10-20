@@ -1,4 +1,3 @@
-y
 apiVersion: litmuchaos.io/v1alpha1
 kind: ChartServiceVersion
 metadata:
